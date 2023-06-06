@@ -1,0 +1,113 @@
+:root {
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#05abe0+0,53cbf1+60,87e0fd+100 */
+    background: #05abe0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #05abe0 0%, #53cbf1 60%, #87e0fd 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#87e0fd',GradientType=0 ); /* IE6-9 */
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;
+    width: 100%;
+}
+
+h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+p, li, button, input {
+    font-size: 1.5rem;
+}
+
+li {
+    list-style: none;
+}
+
+header, main, footer {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    gap: 2rem;
+}
+
+#forecast {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+#currentDay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.temperature {
+    font-size: 5rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.humidity, .windSpeed {
+    font-size: 1.5rem;
+}
+
+#sidebar {
+    width: 20%;
+}
+
+#searchHistory {
+    display: flex;
+    flex-direction: column;;
+}
+
+.card {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    font-size: 1.5rem;
+}

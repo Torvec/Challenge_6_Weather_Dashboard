@@ -18,6 +18,8 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 
 ## Credits
 
+- OpenWeather: [5 Day Weather Forecast](https://openweathermap.org/forecast5)
+- Normalize.css: [Normalize.css](https://necolas.github.io/normalize.css/)
 - Edward Von Schondorf
 
 ## Features

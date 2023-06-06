@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -19,80 +23,19 @@
             </div>
             <div id="searchHistory">
                 <h2>Search History</h2>
-                <ul>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                    <li>City Name</li>
-                </ul>
+                <!-- A LIST OF PREVIOUS SEARCHES GOES HERE -->
             </div>
         </section>
         <section id="forecast">
-            <h2>Current City - Today's Date</h2>
-            <ul>
-                <li>Temperature</li>
-                <li>Humidity</li>
-                <li>Wind Speed</li>
-                <li>UV Index</li>
-            </ul>
-            <h2>5-Day Forecast</h2>
-            <div class="card">
-                <h3>Day 1: Date Here</h3>
-                <ul>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
-                    <li>Wind Speed</li>
-                    <li>UV Index</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Day 2: Date Here</h3>
-                <ul>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
-                    <li>Wind Speed</li>
-                    <li>UV Index</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Day 3: Date Here</h3>
-                <ul>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
-                    <li>Wind Speed</li>
-                    <li>UV Index</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Day 4: Date Here</h3>
-                <ul>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
-                    <li>Wind Speed</li>
-                    <li>UV Index</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Day 5: Date Here</h3>
-                <ul>
-                    <li>Temperature</li>
-                    <li>Humidity</li>
-                    <li>Wind Speed</li>
-                    <li>UV Index</li>
-                </ul>
-            </div>
+            <!--DYNAMICALLY GENERATED FORECAST VIA JAVASCRIPT AND THE OPENWEATHER API GOES HERE-->
         </section>
     </main>
     <footer>
+        <p>An OpenWeather App - <a href="https://openweathermap.org/forecast5" target="_blank">5 Day Weather Forecast API</a></p>
         <p>A UC Berkley Full Stack Web Development Bootcamp Project</p>
         <p>Created June 2023 by Edward Von Schondorf</p>
     </footer>
+    <script src="https://kit.fontawesome.com/72e4ddf21b.js" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

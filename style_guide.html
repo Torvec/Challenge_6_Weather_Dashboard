@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Style Guide for Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main>
+        <section id="sidebar">
+            <div id="search">
+                <input type="text" placeholder="Enter City Name">
+                <button>Search</button>
+            </div>
+            <div id="searchHistory">
+                <h2>Search History</h2>
+                <button>Miami</button>
+                <button>Atlanta</button>
+                <button>Washington D.C.</button>
+                <button>New York City</button>
+                <button>Boston</button>
+                <button>Dallas</button>
+                <button>Chicago</button>
+                <button>San Diego</button>
+                <button>Los Angeles</button>
+                <button>San Francisco</button>
+            </div>
+        </section>
+        <section id="forecast">
+            <div id="currentDay">
+                <h2>Atlanta - 6 Jun 2023</h2>
+                <span class="temperature">70&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+            <h2>5-Day Forecast:</h2>
+            <div class="card">
+                <h3>7 Jun 2023</h3>
+                <span class="temperature">68&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+            <div class="card">
+                <h3>8 Jun 2023</h3>
+                <span class="temperature">69&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+            <div class="card">
+                <h3>9 Jun 2023</h3>
+                <span class="temperature">61&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+            <div class="card">
+                <h3>10 Jun 2023</h3>
+                <span class="temperature">63&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+            <div class="card">
+                <h3>11 Jun 2023</h3>
+                <span class="temperature">62&deg;F</span>
+                <span class="humidity">50% Humidity</span>
+                <span class="windSpeed">10 MPH Wind Speed</span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>An OpenWeather App - <a href="https://openweathermap.org/forecast5" target="_blank">5 Day Weather Forecast API</a></p>
+        <p>A UC Berkley Full Stack Web Development Bootcamp Project</p>
+        <p>Created June 2023 by Edward Von Schondorf</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/72e4ddf21b.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
