@@ -11,3 +11,15 @@
     // WHEN I click on a city in the search history
         // THEN I am again presented with current and future conditions for that city
 
+var APIkey = '69c891690c013252b4d865245ab10534'
+var city = 'San Francisco';
+var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + APIkey;
+
+fetch(queryURL)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    });
+
