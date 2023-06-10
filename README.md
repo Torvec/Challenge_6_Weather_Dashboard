@@ -18,7 +18,8 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 
 ## Credits
 
-- OpenWeather: [5 Day Weather Forecast](https://openweathermap.org/forecast5)
+- OpenWeather: [Geocoding API](https://openweathermap.org/api/geocoding-api)
+- OpenWeather: [One Call API 3.0](https://openweathermap.org/api/one-call-3)
 - Normalize.css: [Normalize.css](https://necolas.github.io/normalize.css/)
 - Edward Von Schondorf
 
