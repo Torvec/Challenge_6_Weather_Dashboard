@@ -36,7 +36,6 @@ h2 {
 h3 {
     font-family: 'Rubik', sans-serif;
     font-size: 1.5rem;
-    text-align: center;
 }
 
 p, li, button, input {
@@ -45,6 +44,12 @@ p, li, button, input {
 
 li {
     list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100px;
+    height: auto;
 }
 
 header, main, footer {
@@ -70,16 +75,21 @@ main {
     gap: 2rem;
 }
 
-#forecast {
+#weather {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 80%;
 }
 
-#currentDay {
-    width: 100%;
+#currentWeather {
     display: flex;
     flex-direction: column;
+}
+
+#forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .temperature {
@@ -87,7 +97,7 @@ main {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-.humidity, .windSpeed {
+.humidity, .windSpeed, .weatherIcon {
     font-size: 1.5rem;
 }
 
@@ -97,14 +107,13 @@ main {
 
 #searchHistory {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }
 
 .card {
     width: 20%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 footer {
