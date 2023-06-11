@@ -87,7 +87,7 @@ header {
     justify-content: center;
 }
 
-#search input {
+#inputSearch {
     width: 80%;
     max-width: 400px;
     border: none;
@@ -95,17 +95,22 @@ header {
     padding: 0.25em;
 }
 
-#search input:focus {
+#inputSearch:focus {
     outline: none;
 }
 
-#search button {
+#searchBtn {
     border: none;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
     width: 20%;
     max-width: 100px;
     color: darkblue;
+}
+
+#searchBtn:hover {
+    opacity: 0.8;
+    color: blue;
 }
 
 main {
@@ -120,17 +125,35 @@ main {
     max-width: 200px;
 }
 
-#searchHistory button {
+.citySearched {
     margin-bottom: 1em;
     cursor: pointer;
     color: darkblue;
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.citySearched:hover {
+    opacity: 0.8;
+    color: blue;
+}
+
+#clearSearchHistory {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background: whitesmoke;
+    color: darkblue;
+}
+
+#clearSearchHistory:hover {
+    opacity: 0.8;
+    color: blue;
 }
 
 #weather {

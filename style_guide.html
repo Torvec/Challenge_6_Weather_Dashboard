@@ -15,23 +15,24 @@
     <header>
         <h1>Weather Dashboard</h1>
         <div id="search">
-            <input type="text" placeholder="Enter City Name" required>
-            <button>Search</button>
+            <input id="inputSearch" type="text" placeholder="Enter City Name" required>
+            <button id="searchBtn">Search</button>
         </div>
     </header>
     <main>
         <div id="searchHistory">
             <h2>History</h2>
-            <button>Miami</button>
-            <button>Atlanta</button>
-            <button>Washington D.C.</button>
-            <button>New York City</button>
-            <button>Boston</button>
-            <button>Dallas</button>
-            <button>Chicago</button>
-            <button>San Diego</button>
-            <button>Los Angeles</button>
-            <button>San Francisco</button>
+            <button class="citySearched">Miami</button>
+            <button class="citySearched">Atlanta</button>
+            <button class="citySearched">Washington D.C.</button>
+            <button class="citySearched">New York City</button>
+            <button class="citySearched">Boston</button>
+            <button class="citySearched">Dallas</button>
+            <button class="citySearched">Chicago</button>
+            <button class="citySearched">San Diego</button>
+            <button class="citySearched">Los Angeles</button>
+            <button class="citySearched">San Francisco</button>
+            <button id="clearSearchHistory">Clear History</button>
         </div>
         <div id="weather">
             <section id="currentWeather">
