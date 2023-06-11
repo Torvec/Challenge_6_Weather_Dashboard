@@ -14,27 +14,24 @@
 <body>
     <header>
         <h1>Weather Dashboard</h1>
+        <div id="search">
+            <input id="inputSearch" type="text" placeholder="Enter City Name" required>
+            <button id="searchBtn">Search</button>
+        </div>
     </header>
     <main>
-        <section id="sidebar">
-            <div id="search">
-                <input id="inputSearch" type="text" placeholder="Enter City Name">
-                <button id="searchBtn">Search</button>
-            </div>
-            <div id="searchHistory">
-                <h2>Search History</h2>
-                <!-- A LIST OF PREVIOUS SEARCHES GOES HERE -->
-            </div>
-        </section>
+        <div id="searchHistory">
+            <h2>History</h2>
+            <!-- SEARCH HISTORY FROM LOCAL STORAGE -->
+        </div>
         <div id="weather">
             <section id="currentWeather">
-            <!--DYNAMICALLY GENERATED CURRENT WEATHER VIA JAVASCRIPT AND THE OPENWEATHER API GOES HERE-->
+                <!-- CURRENT WEATHER FROM OPENWEATHER ONE CALL 3.0 API HERE -->
             </section>
             <section id="forecast">
-                <h2>5-Day Forecast:</h2>
-                <!--DYNAMICALLY GENERATED FORECAST VIA JAVASCRIPT AND THE OPENWEATHER API GOES HERE-->
+                <!-- 5 DAY FORECAST FROM OPENWEATHER ONE CALL 3.0 API HERE -->
             </section>
-        </section>
+        </div>
     </main>
     <footer>
         <p>An OpenWeather App - <a href="https://openweathermap.org/api/one-call-3" target="_blank">One Call API 3.0</a> and <a href="https://openweathermap.org/api/geocoding-api" target="_blank">Geocoding API</a></p>

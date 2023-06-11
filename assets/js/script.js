@@ -1,8 +1,6 @@
 // TODO: GIVEN a weather dashboard with form inputs
     // WHEN I search for a city
         // THEN I am presented with current and future conditions for that city and that city is added to the search history
-    // WHEN I view future weather conditions for that city
-        // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
     // WHEN I click on a city in the search history
         // THEN I am again presented with current and future conditions for that city
 
@@ -21,7 +19,9 @@
 
 var searchInputEl = document.getElementById('inputSearch');
 var searchButtonEl = document.getElementById('searchBtn');
+var searchHistoryEl = document.getElementById('searchHistory');
 var currentWeatherEl = document.getElementById('currentWeather');
+var forecastEl = document.getElementById('forecast');
 
 var limit = 1;
 var APIkey = '69c891690c013252b4d865245ab10534'
@@ -36,9 +36,7 @@ function clearSection(section) {
 
 
 // GET COORDINATES OF CITY USING GEOCODING API FROM OPENWEATHER
-function getCoords(event) {
-    
-    event.preventDefault();
+function getCoords() {
 
     var cityName = searchInputEl.value;
     var getGeoURL = baseGeoURL + cityName + '&limit=' + limit + '&appid=' + APIkey;
@@ -51,7 +49,7 @@ function getCoords(event) {
         var cityLat = data[0].lat;
         var cityLon = data[0].lon;
         getCurrentWeather(cityName, cityLat, cityLon);
-        // getForecastWeather(cityLat, cityLon);
+        getForecastWeather(cityLat, cityLon);
     });
 }
 
@@ -69,34 +67,21 @@ function getCurrentWeather(city, lat, lon) {
         var getCurDate = data.current.dt; // TODO: NEED TO CONVERT TO MM/DD/YYYY - CURRENTLY RETURNS UNIX TIMESTAMP IN UTC
         var getCurClouds = data.current.clouds; // GET CURRENT CLOUD COVER IN PERCENT AND USE IT AS ALT TEXT FOR THE ICON
         var getCurCloudsIcon = data.current.weather[0].icon; // GET CURRENT CLOUD COVER ICON
-        var getCurTemp = Math.floor(data.current.temp) + ' F'; // GET CURRENT TEMPERATURE AND REMOVE DECIMALS
-        var getCurHumidity = data.current.humidity + '% Humidity'; // GET CURRENT HUMIDITY IN PERCENT
-        var getCurWindSpeed = Math.floor(data.current.wind_speed) + ' mph Wind'; // GET CURRENT WIND SPEED IN MPH AND REMOVE DECIMALS
+        var getCurTemp = Math.floor(data.current.temp); // GET CURRENT TEMPERATURE AND REMOVE DECIMALS
+        var getCurHumidity = data.current.humidity; // GET CURRENT HUMIDITY IN PERCENT
+        var getCurWindSpeed = Math.floor(data.current.wind_speed); // GET CURRENT WIND SPEED IN MPH AND REMOVE DECIMALS
         
-        var curCityDate = document.createElement('h2');
-        curCityDate.textContent = city + ' - ' + getCurDate;
-        currentWeatherEl.appendChild(curCityDate);
-
-        var curCloudsIcon = document.createElement('img')
-        curCloudsIcon.setAttribute('src', 'https://openweathermap.org/img/wn/' + getCurCloudsIcon + '.png');
-        curCloudsIcon.setAttribute('alt', getCurClouds + '% cloud cover');
-        currentWeatherEl.appendChild(curCloudsIcon);
-        
-        var curTemp = document.createElement('span');
-        curTemp.setAttribute('class', 'temperature');
-        curTemp.textContent = getCurTemp;
-        currentWeatherEl.appendChild(curTemp);
-
-        var curHumidity = document.createElement('span');
-        curHumidity.setAttribute('class', 'humidity');
-        curHumidity.textContent = getCurHumidity;
-        currentWeatherEl.appendChild(curHumidity);
-
-        var curWindSpeed = document.createElement('span');
-        curWindSpeed.setAttribute('class', 'windSpeed');
-        curWindSpeed.textContent = getCurWindSpeed;
-        currentWeatherEl.appendChild(curWindSpeed);
-
+        currentWeatherEl.innerHTML = 
+        `<div class="card">
+            <h2>${city}</h2>
+            <h3>${getCurDate}</h3>
+            <div class="card-header">
+                <img class="weatherIcon" src="https://openweathermap.org/img/wn/${getCurCloudsIcon}.png" alt="${getCurClouds}">
+                <p class="temperature">${getCurTemp}&deg;<sup>F</sup></p>
+            </div>
+            <p class="humidity">Humidity: ${getCurHumidity}%</p>
+            <p class="windSpeed">Wind Speed: ${getCurWindSpeed} MPH</p>
+        </div>`;
     });
 
 }
@@ -104,53 +89,43 @@ function getCurrentWeather(city, lat, lon) {
 // GET 5-DAY FORECAST USING ONE CALL API FROM OPENWEATHER
 function getForecastWeather(lat, lon) {
     
-}
+    var getOneCallURL = baseOneCallURL + 'lat=' + lat + '&lon=' + lon + '&exclude=' + excludeParams + '&units=' + unitsParam + '&appid=' + APIkey;
+
+    fetch(getOneCallURL)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+    
+        var forecastHTML = '';
+
+        for (var i = 0; i < 5; i++) {
+
+            var getForecastDate = data.daily[i].dt; // TODO: NEED TO CONVERT TO MM/DD/YYYY - CURRENTLY RETURNS UNIX TIMESTAMP IN UTC
+            var getForecastClouds = data.daily[i].clouds; // GET CURRENT CLOUD COVER IN PERCENT AND USE IT AS ALT TEXT FOR THE ICON
+            var getForecastCloudsIcon = data.daily[i].weather[0].icon; // GET CURRENT CLOUD COVER ICON
+            var getForecastTemp = Math.floor(data.daily[i].temp.day); // GET CURRENT TEMPERATURE AND REMOVE DECIMALS
+            var getForecastHumidity = data.daily[i].humidity; // GET CURRENT HUMIDITY IN PERCENT
+            var getForecastWindSpeed = Math.floor(data.daily[i].wind_speed); // GET CURRENT WIND SPEED IN MPH AND REMOVE DECIMALS
+
+            forecastHTML += `
+            <div class="card">
+            <h3>${getForecastDate}</h3>
+            <div class="card-header">
+                <img class="weatherIcon" src="https://openweathermap.org/img/wn/${getForecastCloudsIcon}.png" alt="${getForecastClouds}">
+                <p class="temperature">${getForecastTemp}&deg;<sup>F</sup></p>
+            </div>
+            <p class="humidity">Humidity: ${getForecastHumidity}%</p>
+            <p class="windSpeed">Wind Speed: ${getForecastWindSpeed} MPH</p>
+            </div>`;
+        }
+            forecastEl.innerHTML = forecastHTML;
+    });
+};
 
 searchButtonEl.addEventListener('click', function() {
     getCoords();
+    event.preventDefault();
     clearSection(currentWeatherEl);
+    clearSection(forecastEl);
 });
-
-
-// https://openweathermap.org/weather-conditions#How-to-get-icon-URL <-- ICONS
-// {
-//     "current": {
-//         "temp": 56.53,
-//         "humidity": 78,
-//         "clouds": 100,
-//         "wind_speed": 5.75,
-//         "weather": [
-//             {
-//                 "id": 804,
-//                 "main": "Clouds",
-//                 "description": "overcast clouds",
-//                 "icon": "04n"
-//             }
-//         ]
-//     },
-//     "daily": [
-//         {
-//             "temp": {
-//                 "day": 76.78,
-//                 "min": 54.86,
-//                 "max": 79.61,
-//                 "night": 57.49,
-//                 "eve": 72.01,
-//                 "morn": 56.35
-//             },
-//             "humidity": 36,
-//             "wind_speed": 6.31,
-//             "weather": [
-//                 {
-//                     "id": 804,
-//                     "main": "Clouds",
-//                     "description": "overcast clouds",
-//                     "icon": "04d"
-//                 }
-//             ],
-//             "clouds": 100,
-//             "pop": 0,
-//             "uvi": 6.86
-//         },
-//     ]
-// }

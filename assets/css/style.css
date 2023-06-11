@@ -49,7 +49,7 @@ p, button, input {
 
 img {
     display: block;
-    max-width: 100px;
+    width: 100px;
     height: auto;
 }
 
