@@ -20,7 +20,9 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 
 - OpenWeather: [Geocoding API](https://openweathermap.org/api/geocoding-api)
 - OpenWeather: [One Call API 3.0](https://openweathermap.org/api/one-call-3)
-- Normalize.css: [Normalize.css](https://necolas.github.io/normalize.css/)
+- Meyerweb Reset: [Reset.css](http://meyerweb.com/eric/tools/css/reset/)
+- ColorZilla: [Gradient Editor](https://www.colorzilla.com/gradient-editor/)
+- CSS Glass Effect: [CSS.Glass](https://css.glass)
 - Edward Von Schondorf
 
 ## Features

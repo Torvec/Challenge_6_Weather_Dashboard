@@ -1,7 +1,3 @@
-:root {
-
-}
-
 * {
     box-sizing: border-box;
 }
@@ -12,38 +8,43 @@ html {
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#05abe0+0,53cbf1+60,87e0fd+100 */
-    background: #05abe0; /* Old browsers */
-    background: -moz-linear-gradient(top,  #05abe0 0%, #53cbf1 60%, #87e0fd 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #05abe0 0%,#53cbf1 60%,#87e0fd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#87e0fd',GradientType=0 ); /* IE6-9 */
+    background: #05abe0;
     height: 100vh;
     font-family: sans-serif;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7abcff+0,60abf8+44,4096ee+100;Blue+3D+%2314 */
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
 }
 
 h1 {
     font-family: 'Rubik', sans-serif;
     font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 h2 {
     font-family: 'Rubik', sans-serif;
     font-size: 2rem;
     width: 100%;
+    font-weight: bold;
+    margin-bottom: 1em;
 }
 
 h3 {
     font-family: 'Rubik', sans-serif;
     font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1em;
 }
 
-p, li, button, input {
+p, button, input {
     font-size: 1.5rem;
-}
-
-li {
-    list-style: none;
+    line-height: 1.5;
 }
 
 img {
@@ -52,9 +53,19 @@ img {
     height: auto;
 }
 
+a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
 header, main, footer {
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
     /* From https://css.glass */
@@ -67,7 +78,34 @@ header, main, footer {
 }
 
 header {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+}
+
+#search input {
+    width: 80%;
+    max-width: 400px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    padding: 0.25em;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+#search button {
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    width: 20%;
+    max-width: 100px;
+    color: darkblue;
 }
 
 main {
@@ -75,48 +113,73 @@ main {
     gap: 2rem;
 }
 
-#weather {
+#searchHistory {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 25%;
+    max-width: 200px;
+}
+
+#searchHistory button {
+    margin-bottom: 1em;
+    cursor: pointer;
+    color: darkblue;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#weather {
+    width: 75%;
 }
 
 #currentWeather {
-    display: flex;
-    flex-direction: column;
+    border-bottom: 2px solid skyblue;
+    margin-bottom: 2rem;
 }
 
 #forecast {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    max-width: 200px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
 }
 
 .temperature {
     font-size: 5rem;
     font-family: 'Bebas Neue', sans-serif;
+    margin-left: 0;
 }
 
-.humidity, .windSpeed, .weatherIcon {
+sup {
+    vertical-align: super;
+    font-size: 2.5rem;
+}
+
+.humidity, .windSpeed {
     font-size: 1.5rem;
-}
-
-#sidebar {
-    width: 20%;
-}
-
-#searchHistory {
-    display: flex;
-    flex-direction: column;
-}
-
-.card {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
+    margin-left: 1em;
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     text-align: center;
     font-size: 1.5rem;
 }

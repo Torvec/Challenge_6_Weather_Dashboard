@@ -7,84 +7,96 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Style Guide for Weather Dashboard</title>
 </head>
 <body>
     <header>
         <h1>Weather Dashboard</h1>
+        <div id="search">
+            <input type="text" placeholder="Enter City Name" required>
+            <button>Search</button>
+        </div>
     </header>
     <main>
-        <section id="sidebar">
-            <div id="search">
-                <input type="text" placeholder="Enter City Name">
-                <button>Search</button>
-            </div>
-            <div id="searchHistory">
-                <h2>Search History</h2>
-                <button>Miami</button>
-                <button>Atlanta</button>
-                <button>Washington D.C.</button>
-                <button>New York City</button>
-                <button>Boston</button>
-                <button>Dallas</button>
-                <button>Chicago</button>
-                <button>San Diego</button>
-                <button>Los Angeles</button>
-                <button>San Francisco</button>
-            </div>
-        </section>
+        <div id="searchHistory">
+            <h2>History</h2>
+            <button>Miami</button>
+            <button>Atlanta</button>
+            <button>Washington D.C.</button>
+            <button>New York City</button>
+            <button>Boston</button>
+            <button>Dallas</button>
+            <button>Chicago</button>
+            <button>San Diego</button>
+            <button>Los Angeles</button>
+            <button>San Francisco</button>
+        </div>
         <div id="weather">
             <section id="currentWeather">
-                <h2>Atlanta - 6 Jun 2023</h2>
-                <span class="weatherIcon">@</span>
-                <span class="temperature">70&deg;F</span>
-                <span class="humidity">50% Humidity</span>
-                <span class="windSpeed">10 MPH Wind Speed</span>
+                <div class="card">
+                    <h2>Atlanta</h2>
+                    <h3>June 6th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/11d@2x.png" alt="IT'S GON STORM">
+                        <p class="temperature">70&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 50%</p>
+                    <p class="windSpeed">Wind Speed: 1 MPH</p>
+                </div>
             </section>
             <section id="forecast">
-                <h2>5-Day Forecast:</h2>
                 <div class="card">
-                    <h3>7 Jun 2023</h3>
-                    <span class="temperature">68&deg;F</span>
-                    <span class="weatherIcon">@</span>
-                    <span class="humidity">50% Humidity</span>
-                    <span class="windSpeed">10 MPH Wind Speed</span>
+                    <h3>June 7th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/01d@2x.png" alt="IT'S GON BURN">
+                        <p class="temperature">75&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 90%</p>
+                    <p class="windSpeed">Wind Speed: 11 MPH</p>
                 </div>
                 <div class="card">
-                    <h3>8 Jun 2023</h3>
-                    <span class="temperature">69&deg;F</span>
-                    <span class="weatherIcon">@</span>
-                    <span class="humidity">50% Humidity</span>
-                    <span class="windSpeed">10 MPH Wind Speed</span>
+                    <h3>June 8th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="IT'S GON BE CLOUDY">
+                        <p class="temperature">71&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 80%</p>
+                    <p class="windSpeed">Wind Speed: 12 MPH</p>
                 </div>
                 <div class="card">
-                    <h3>9 Jun 2023</h3>
-                    <span class="temperature">61&deg;F</span>
-                    <span class="weatherIcon">@</span>
-                    <span class="humidity">50% Humidity</span>
-                    <span class="windSpeed">10 MPH Wind Speed</span>
+                    <h3>June 9th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/03d@2x.png" alt="NICE">
+                        <p class="temperature">69&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 55%</p>
+                    <p class="windSpeed">Wind Speed: 5 MPH</p>
                 </div>
                 <div class="card">
-                    <h3>10 Jun 2023</h3>
-                    <span class="temperature">63&deg;F</span>
-                    <span class="weatherIcon">@</span>
-                    <span class="humidity">50% Humidity</span>
-                    <span class="windSpeed">10 MPH Wind Speed</span>
+                    <h3>June 10th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/03d@2x.png" alt="IT'S GON BE DEPRESSING">
+                        <p class="temperature">73&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 60%</p>
+                    <p class="windSpeed">Wind Speed: 4 MPH</p>
                 </div>
                 <div class="card">
-                    <h3>11 Jun 2023</h3>
-                    <span class="temperature">62&deg;F</span>
-                    <span class="weatherIcon">@</span>
-                    <span class="humidity">50% Humidity</span>
-                    <span class="windSpeed">10 MPH Wind Speed</span>
+                    <h3>June 11th, 2023</h3>
+                    <div class="card-header">
+                        <img class="weatherIcon" src="https://openweathermap.org/img/wn/09d@2x.png" alt="IT'S GON RAIN!">
+                        <p class="temperature">72&deg;<sup>F</sup></p>
+                    </div>
+                    <p class="humidity">Humidity: 0%</p>
+                    <p class="windSpeed">Wind Speed: 6 MPH</p>
                 </div>
             </section>
         </div>
     </main>
     <footer>
-        <p>An OpenWeather App - <a href="https://openweathermap.org/forecast5" target="_blank">5 Day Weather Forecast API</a></p>
+        <p>An OpenWeather App - <a href="https://openweathermap.org/api/one-call-3" target="_blank">One Call API 3.0</a> and <a href="https://openweathermap.org/api/geocoding-api" target="_blank">Geocoding API</a></p>
         <p>A UC Berkley Full Stack Web Development Bootcamp Project</p>
         <p>Created June 2023 by Edward Von Schondorf</p>
     </footer>
