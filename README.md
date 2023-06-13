@@ -10,7 +10,7 @@ Visit the GitHub pages link to see website: [Weather Dashboard](https://torvec.g
 
 ## Visuals
 
-COMING SOON!
+![Weather Dashboard](./assets/img/siteScreenShot.png)
 
 ## Usage
 
@@ -20,6 +20,7 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 
 - OpenWeather: [Geocoding API](https://openweathermap.org/api/geocoding-api)
 - OpenWeather: [One Call API 3.0](https://openweathermap.org/api/one-call-3)
+- DayJS: [DayJS](https://day.js.org/)
 - Meyerweb Reset: [Reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - ColorZilla: [Gradient Editor](https://www.colorzilla.com/gradient-editor/)
 - CSS Glass Effect: [CSS.Glass](https://css.glass)
@@ -27,8 +28,8 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 
 ## Features
 
-- A 5 day weather forecast based off of the user's search input with data provided by the OpenWeather API
+- A current weather and 5 day weather forecast based off of the user's search input with data provided by the OpenWeather API's
 
 ## Project Status
 
-Work In Progress
+Completed June 2023
