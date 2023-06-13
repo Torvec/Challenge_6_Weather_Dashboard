@@ -6,7 +6,7 @@ The week 06 challenge was to create a weather dashboard that was dynamically gen
 
 ## GitHub Pages
 
-Visit the GitHub pages link to see website: [Weather Dashboard](https://torvec.github.io/challenge_6_Weather_Dashboard/)
+Visit the GitHub pages link to see website: [Weather Dashboard](https://torvec.github.io/Challenge_6_Weather_Dashboard/)
 
 ## Visuals
 
