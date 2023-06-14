@@ -1,4 +1,5 @@
-# Bootcamp-Week-06-Challenge
+# Weather Dashboard
+A UC Berkley Full Stack Web Development Bootcamp Week 06 Challenge
 
 ## Description
 
