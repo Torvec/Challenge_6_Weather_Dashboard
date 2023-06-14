@@ -25,6 +25,7 @@ This page is used for grading purposes by the UC Berkley coding bootcamp staff.
 - Meyerweb Reset: [Reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - ColorZilla: [Gradient Editor](https://www.colorzilla.com/gradient-editor/)
 - CSS Glass Effect: [CSS.Glass](https://css.glass)
+- Google Fonts: [Google Fonts](https://fonts.google.com/)
 - Edward Von Schondorf
 
 ## Features
